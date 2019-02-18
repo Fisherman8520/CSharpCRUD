@@ -42,7 +42,7 @@ namespace CsharpCRUD
             ds = new DataSet();
             adapter = new MySqlDataAdapter("insert into tbl_names (firstname, lastname, address, occupation) VALUES ('" + textBox1.Text +"','"+ textBox2.Text +"','" + textBox3.Text + "', '" + textBox4.Text + "')", conn);
             adapter.Fill(ds, "tbl_names");
-            MessageBox.Show("Added!");
+            MessageBox.Show("Data Added!");
             textBox1.Clear();
             textBox2.Clear();
             textBox3.Clear();
@@ -83,6 +83,7 @@ namespace CsharpCRUD
             ds = new DataSet();
             adapter = new MySqlDataAdapter("update tbl_names set firstname = '" + textBox1.Text + "', lastname = '" + textBox2.Text + "', address = '" + textBox3.Text + "', occupation = '" + textBox4.Text + "' where id = " + label5.Text, conn);
             adapter.Fill(ds, "tbl_names");
+            MessageBox.Show("Data Updated!");
             textBox1.Clear();
             textBox2.Clear();
             textBox3.Clear();
@@ -97,6 +98,7 @@ namespace CsharpCRUD
             ds = new DataSet();
             adapter = new MySqlDataAdapter("delete from tbl_names where id = " + dataGridView1[0, i].Value.ToString(), conn);
             adapter.Fill(ds, "tbl_names");
+            MessageBox.Show("Data Deleted");
             textBox1.Clear();
             textBox2.Clear();
             textBox3.Clear();
